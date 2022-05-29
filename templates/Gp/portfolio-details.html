@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Analysis Redefined</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for( 'static', filename='favicon.png')}}" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for( 'static', filename='bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url_for( 'static', filename='bootstrap-icons.css')}}" rel="stylesheet" type="text/css">
+  
+  <link href="{{url_for( 'static', filename='glightbox.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url_for( 'static', filename='remixicon.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url_for( 'static', filename='swiper-bundle.min.css')}}" rel="stylesheet" type="text/css">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for( 'static', filename='style.css')}}" rel="stylesheet" type="text/css">
+
+  <!-- =======================================================
+  * Template Name: Gp - v4.7.0
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="{{url_for('index')}}">AIA<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <script>var lastScrollTop;
+          navbar = document.getElementById('header');
+          window.addEventListener('scroll',function(){
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if(scrollTop > lastScrollTop){
+          navbar.style.top='-90px';
+          }
+          else{
+          navbar.style.top='0';
+          }
+          lastScrollTop = scrollTop;
+          });</script>
+        <ul>
+          <li><a class="nav-link scrollto " href="{{ url_for('index', _anchor='hero')}}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('index', _anchor='about')}}">Maker's Perspective</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('index', _anchor='services')}}">Customers 2.0</a></li>
+          <li><a class="nav-link scrollto active" href="{{ url_for('index', _anchor='portfolio')}}">Quick Overview</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('index', _anchor='team')}}">Most Recent Launches</a></li>
+          <li class="nav-link scrollto"><a href="{{ url_for('index', _anchor='cta')}}"><span>Predictions</span></a>
+            <li class="nav-link scrollto"><a href="{{ url_for('index', _anchor='testimonials')}}"><span>Launch Time<br>& Queries</span></a>
+            
+          </li>
+          <li><a class="nav-link scrollto" href="#footer">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="font-size: 2rem;"><B>Analysis In Action </B></h2>
+          <ol>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li>Representation</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-top">
+
+                <div class="swiper-slide" data-hash="slide1">
+                  <!--hist make fuel-->
+                  <main>
+                    <div id="chart1"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph1 = {{graph1JSON | safe}};
+                    Plotly.plot("chart1",graph1,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide2">
+                  <!--scatter 3d power price mileage-->
+                    <main>
+                    <div id="chart2"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph2 = {{graph2JSON | safe}};
+                    Plotly.plot("chart2",graph2,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide3">
+                  <!--scatter power price bodytype-->
+                  <main>
+                    <div id="chart3"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph3 = {{graph3JSON | safe}};
+                    Plotly.plot("chart3",graph3,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide4">
+                  <!--pie bodytype value-->
+                  <main>
+                    <div id="chart4"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph4 = {{graph4JSON | safe}};
+                    Plotly.plot("chart4",graph4,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide5">
+                  <!--tax-->
+                  <main>
+                    <div id="chart5"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph5 = {{graph5JSON | safe}};
+                    Plotly.plot("chart5",graph5,{});
+                    </script>
+                    
+                    </main>
+                </div>
+                 
+                <div class="swiper-slide" data-hash="slide6">
+                  <!--displacement power mileage price scatter-->
+                  <main>
+                    <div id="chart6"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph6 = {{graph6JSON | safe}};
+                    Plotly.plot("chart6",graph6,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide7">
+                  <!--body type fuel type sunburst-->
+                  <main>
+                    <div id="chart7"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph7 = {{graph7JSON | safe}};
+                    Plotly.plot("chart7",graph7,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide8">
+                  <!--mileage torque fuel type violin-->
+                  <main>
+                    <div id="chart9"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph9 = {{graph9JSON | safe}};
+                    Plotly.plot("chart9",graph9,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide9">
+                  <!--scatter 3d height width length-->
+                  <main>
+                    <div id="chart10"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph10 = {{graph10JSON | safe}};
+                    Plotly.plot("chart10",graph10,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide10">
+                  <!--sunburst type make-->
+                  <main>
+                    <div id="chart88"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph88 = {{graph88JSON | safe}};
+                    Plotly.plot("chart88",graph88,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide11">
+                  <!--share tsla-->
+                  <main>
+                    <div id="chart99"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph99 = {{graph99JSON | safe}};
+                    Plotly.plot("chart99",graph99,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide12">
+                  <!--regression mileage-->
+                  <main>
+                    <div id="chart111"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph111 = {{graph111JSON | safe}};
+                    Plotly.plot("chart111",graph111,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide13">
+                  <!--regression power-->
+                  <main>
+                    <div id="chart222"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph222 = {{graph222JSON | safe}};
+                    Plotly.plot("chart222",graph222,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                
+                <div class="swiper-slide" data-hash="slide14">
+                  <!--share uber-->
+                  <main>
+                    <div id="chart100"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph100 = {{graph100JSON | safe}};
+                    Plotly.plot("chart100",graph100,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide15">
+                  <!--state plot-->
+                  <main>
+                    <div id="chart68"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph68 = {{graph68JSON | safe}};
+                    Plotly.plot("chart68",graph68,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide16">
+                  <!--credit plot-->
+                  <main>
+                    <div id="chart79"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph79 = {{graph79JSON | safe}};
+                    Plotly.plot("chart79",graph79,{});
+                    </script>
+                    
+                    </main>
+                </div>
+
+                <div class="swiper-slide" data-hash="slide17">
+                  <!--credit plot-->
+                  <main>
+                    <div id="chart101"></div>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script type="text/javascript">
+                    var graph101 = {{graph101JSON | safe}};
+                    Plotly.plot("chart101",graph101,{});
+                    </script>
+                    
+                    </main>
+                </div>
+              </div>
+              
+            
+            </div>
+          
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-top">
+
+                  <div class="swiper-slide" data-hash="slide1">
+                    <div class="portfolio-info">
+                      <H1>Brand Involvement</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Manufacturer</strong> </li>
+                        <li><strong>Y Axis : Count</strong> </li>
+                        <li><strong>Colour / Hue : Fuel</strong></li>
+                        <li><strong>Signifance : Shows which Manufacturer is focusing on what type of engines based on the fuel type. 
+                          This will give the type of fuel being most looked at in the automobile market.</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why This Plot ?</h2>
+                      <ul>
+                        <li><strong>Comparison of the most involved Manufacturers under one type of vehicle .</strong> </li>
+                        <li><strong>Analysis if the Manufacturer leading in each segment of the industry</strong> </li>
+                        <li><strong>Market demand of each type of vehicle can be predicted</strong></li>
+                        <li><strong>Manufacturer Competetion can be analysed</strong></li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide2">
+                    <div class="portfolio-info">
+                      <H1>Brand Involvement</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Mileage</strong> </li>
+                        <li><strong>Y Axis : Power</strong> </li>
+                        <li><strong>Z Axis : Price</strong> </li>
+                        <li><strong>Colour / Hue : Manufacturer</strong></li>
+                        <li><strong>Signifance : The ambidient combination of all the 3 aspects as implemented by manufacturers can be a source to find the 
+                          optimum solution.
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why This Plot ?</h2>
+                      <ul>
+                        <li><strong>Existing combination of mileage power and price in the market</strong> </li>
+                        <li><strong>Manufacturer density towards a certain region depicts the area of focus</strong> </li>
+                        <li><strong>Weightage of each parameter while planning a vehicle</strong></li>
+                        <li><strong>A large Red Ocean of More Mileage and More Power is clearly demonstrated</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide3">
+                    <div class="portfolio-info">
+                      <H1>Body Type</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Power</strong> </li>
+                        <li><strong>Y Axis : Price</strong> </li>
+                        <li><strong>Colour / Hue : Body Type</strong></li>
+                        <li><strong>Signifance : Represents the market trend of the power of the vehicles availabe under different segments
+                          and their price.
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul>
+                        <li><strong>The manufacturer gains an understanding of the projected power for a certain pricing.</strong> </li>
+                        <li><strong>The above comparison can assist a manufacturer in determining the body type depending on their intended price range in accordance with the current trend.</strong> </li>
+                        <li><strong>Manufacturers can choose the optimal power specs according on their body type.</strong></li>
+                        <li><strong>Manufacturers can employ chosen body type, pricing range, and power range data to meet their needs.</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide4">
+                    <div class="portfolio-info">
+                      <H1>Taxation</H1><br>
+                      <h3>Pie Plot Representation</h3>
+                      <ul>
+                        <li><strong>Attributes : Body Type</strong> </li>
+                        <li><strong>Type: Percentage Plot</strong> </li>
+                        <li><strong>Area Distribution : Majority</strong></li>
+                        <li><strong>Signifance : Market composition of body types will give an idea of the customer preferences
+                          and demands . manufacturer will get to know what dominates the market.
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul>
+                        <li><strong>A comparison of high-demand and low-demand models can assist manufacturers in meeting demand.</strong> </li>
+                        <li><strong>Manufacturers can use the graph to identify low-demand models, make necessary improvements, and build a market there.</strong> </li>
+                        <li><strong>The maker can choose from a variety of models based on demand, as indicated in the illustration above.</strong></li>
+                        <li><strong>The maker can get an insight of how unique his/her model is .</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide5">
+                    <div class="portfolio-info">
+                      <H1>Customer's Perspective</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Displacement</strong> </li>
+                        <li><strong>Y Axis : Count</strong> </li>
+                        <li><strong>Colour / Hue : Tax criteria</strong></li>
+                        <li><strong>Signifance : Tax Criteria of each segment defines its affordability to the consumer and thus will help
+                          in full utilization of resources under each tax segemnt while maintaining affordability for the consumer.
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul>
+                        <li><strong>The plot above can be used by the manufacturer to strategize on the optimum specs in terms of displacement to be increased in order to be in the optimal Tax rate.</strong> </li>
+                        <li><strong>By selecting a displacement spec around the upper bound of the constant tax rate, the manufacturer might note a strategy for utilising the best of the tax criteria.</strong> </li>
+                        <li><strong>The plot will make the manufacturer clearer about what can and cannot be added in the vehicle to ensure affordability . </strong></li>
+                        <li><strong>The manufacturer will get an EXCELLENT way of increasing affordability to the customer while cutting cost at the same time.</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide6">
+                    <div class="portfolio-info">
+                      <H1>Fuel Type Analysis</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>Dual Axis Coordinates :<br>Displacement | Mileage | Power | Price</strong> </li>
+                        
+                        <li><strong>Colour / Hue : Fuel Type</strong></li>
+                        <li><strong>Signifance : All in one variation of all the available models in the market based on the key features that a 
+                          customer  looks in a car.
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why This Plot ?</h2>
+                      <ul type="o">
+                        <li><strong>The modern customer analyses all the options available in the market thoroughly a detailed study of each parameter at the manufacturers end is also required.</strong> </li>
+                        <li><strong>Selected Parameters : Mileage , Power , Fuel Type , Price are the KEY QUERIES at the time of purchase.</strong> </li>
+                        <li><strong>A variation in each parameter with every other parameter helps manufacturer identify its key goals in a model. </strong></li>
+                        <li><strong>Colour density in an individual Biplot determines the suited fuel type.</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide7">
+                    <div class="portfolio-info">
+                      <H1>Fuel Type Analysis</H1><br>
+                      <h3>Sunburst Representation</h3>
+                      <ul>
+                        <li><strong>Attribute Inner Layer : Body Type</strong> </li>
+                        <li><strong>Attribute Middle Layer : Fuel Type</strong> </li>
+                        <li><strong>Attribute Outer Layer : Fuel Tank Size</strong></li>
+                        <li><strong>Signifance : Representation shows wwhat are manufacturers offering to their customers , what combination is being offered
+                          by most of the Manufacturer and what type of fuel and capacity combination is best suited for the market needs.
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why This Plot ?</h2>
+                      <ul type="o">
+                        <li><strong>A representation of what space must be given to the fuel storage criteria while designing.</strong> </li>
+                        <li><strong>Variation in the storage capacity of fuel tank wrt. fuel type</strong> </li>
+                        <li><strong>Average fuel tank capacity of each type of vehicle can be deduced</strong></li>
+                        <li><strong>The combination of the three attributes that can be the market changer can be figured out</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide8">
+                    <div class="portfolio-info">
+                      <H1>Body Type Analysis</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Torque</strong> </li>
+                        <li><strong>Y Axis : Mileage</strong> </li>
+                        <li><strong>Colour / Hue : Fuel Type</strong></li>
+                        <li><strong>Signifance : The Plot describes what torque is achievable with the current technology without disrupting the mileage</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul type="o">
+                        <li><strong>Information about the amount of torque offered at a certain mileage</strong> </li>
+                        <li><strong>Market Analysis of the torque offered by vehicles of different fuel type</strong> </li>
+                        <li><strong>Average torque offered by high efficiency vehicles</strong></li>
+                        <li><strong>Maximum torque and mileage combination in the market under production.</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide9">
+                    <div class="portfolio-info">
+                      <H1>Brand Involvement</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Height</strong> </li>
+                        <li><strong>Y Axis : Width</strong> </li>
+                        <li><strong>Z Axis : Length</strong> </li>
+                        <li><strong>Colour / Hue : Body Type</strong></li>
+                        <li><strong>Signifance : Vaolumetric and Spacial Analysis of major segments.</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul type="o">
+                        <li><strong>Size of an average hatchback , sedan , SUV and all others.</strong> </li>
+                        <li><strong>Key combinations of dimesions available in the market.</strong> </li>
+                        <li><strong>Dimensions of automobiles where all the variety of body types are present</strong></li>
+                        <li><strong>Optimal dimesions of the vehicle for the Indian marketplace.</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide10">
+                    <div class="portfolio-info">
+                      <H1>Brand Involvement</H1><br>
+                      <h3>Sunburst Representation</h3>
+                      <ul>
+                        <li><strong>Attribute Label Inside : Type of Transmission</strong> </li>
+                        <li><strong>Attribute Label Outside : Manufacturer</strong> </li>
+                        <li><strong>Signifance : Trends of the industry towards adapting the automatics transmission and Manufacturers leading the change</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul type="o">
+                        <li><strong>Market composition of automatic and manual transmission vehicles</strong> </li>
+                        <li><strong>Product proportion of various transmission types by every Manufacturer</strong> </li>
+                        <li><strong>Manufacturers shifting towards modern transmission technique</strong></li>
+                        <li><strong>Versatility of every Manufacturer in the market</strong> </li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide11">
+                    <div class="portfolio-info">
+                      <H1>Red Ocean</H1><br>
+                      <h3>Electric Vehicle : As a Product</h3>
+                      <ul>
+                        <li><strong>The customer belief and trust on the technology</strong> </li>
+                        <li><strong>Eco-Friendly VS Pocket Friendly</strong> </li>
+                        <li><strong>Vehicle Image and Brand Image</strong></li>
+                        <li><strong>Top Promoter Analysis</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why TSLA-USD Stock Plot ?</h2>
+                      <ul>
+                        <li><strong>Tesla is an EV Giant</strong> </li>
+                        <li><strong>Tesla is still not listed in Indian market hence USD</strong> </li>
+                        <li><strong>The stock projecion is a direct indicator of company and hence the technology</strong></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide12">
+                    <div class="portfolio-info">
+                      <H1>Regression Analysis</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Price</strong> </li>
+                        <li><strong>Y Axis : Mileage</strong> </li>
+                        <li><strong>Linear Plot : Regression </strong></li>
+                        <li><strong>Signifance : Linear Regression helps in directly predicting the Optimum Mileage for a 
+                          vehicle of a certain Price . Especially made for those who are focusing on Mileage to Boast On !!
+                        </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>How it Works ?</h2>
+                      <ul type="o">
+                        <li><strong>The availabel vehicle data in the market is analysed</strong> </li>
+                        <li><strong>A linear Regression model is made</strong> </li>
+                        <li><strong>Price VS mileage line represents an optimum value of Mileage at a given price</strong></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide13">
+                    <div class="portfolio-info">
+                      <H1>Regression Analysis</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Price</strong> </li>
+                        <li><strong>Y Axis :Power</strong> </li>
+                        <li><strong>Linear Plot : Regression</strong></li>
+                        <li><strong>Signifance : Linear Regression helps in directly predicting the Optimum Power for a vehicle of a certain Price . Especially made for those who are focusing on Power to Boast On !!</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>How it Works ?</h2>
+                      <ul type="o">
+                        <li><strong>The availabel vehicle data in the market is analysed</strong> </li>
+                        <li><strong>A linear Regression model is made</strong> </li>
+                        <li><strong>Price VS Power line represents an optimum value of Mileage at a given price</strong></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide14">
+                    <div class="portfolio-info">
+                      <H1>Shared Mobility</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>Shared Mobility Giant Uber Stock Trend</strong> </li>
+                        <li><strong>stock Price in USD</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why the Uber Stock Plot ?</h2>
+                      <ul>
+                        <li>Uber leads the market in customer base </li>
+                        <li><strong>A study of stock will provide the company profit/losses and hence insights of the sector</strong> </li>
+                        <li><strong>Live data will help increase forecast accuracy</strong></li>
+  
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide15">
+                    <div class="portfolio-info">
+                      <H1>Sales Analysis</H1><br>
+                      <h3>Chloropeth Representation</h3>
+                      <ul>
+                        <li><strong>Region : India</strong> </li>
+                        <li><strong>Hue : Number of Cars Sold</strong> </li>
+                        <li><strong>Signifance : Potential marketplace for the cars and emerging regions can be identified </strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why This Plot ?</h2>
+                      <ul type="o">
+                        <li><strong>Clear Visualization of the NSEW regions of India</strong> </li>
+                        <li><strong>Marked Potential of each state by the sales data.</strong> </li>
+                        <li><strong>Clear picture of quarterly sales between every STATE and UT.</strong></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide16">
+                    <div class="portfolio-info">
+                      <H1>Customer Behaviour</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Price of Vehicle</strong> </li>
+                        <li><strong>Y Axis : Number Of Vehicles</strong> </li>
+                        <li><strong>Colour / Hue : Creditor/Non-Creditor</strong></li>
+                        <li><strong>Signifance : Relation between availability of credit and purchase preference</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul>
+                        <li><strong>Comparison of customer behaviour on the role of credit and cash / self purchase .</strong> </li>
+                        <li><strong>Differentiating the type of customer based on the purchasing habit.</strong> </li>
+                        <li><strong>Identifying the potential customer base who needs credit support .</strong></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide17">
+                    <div class="portfolio-info">
+                      <H1>Fuel Preferences</H1><br>
+                      <h3>Plot Representation</h3>
+                      <ul>
+                        <li><strong>X Axis : Manufacturer</strong> </li>
+                        <li><strong>Y Axis : Number Of Vehicles Sold</strong> </li>
+                        <li><strong>Colour / Hue : Fuel Type</strong></li>
+                        <li><strong>Signifance : Purchase preference of the customer based on Fuel Type</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Why this Plot ?</h2>
+                      <ul>
+                        <li><strong>Comparison of customer behaviour on the two major fuel models available in the market .</strong> </li>
+                        <li><strong>Insight of which brand in more popular in Petrol / Diesel segment</strong> </li>
+                        <li><strong>Overall sales comparison of each brand .</strong></li>
+                        </ul>
+                    </div>
+                  </div>
+  
+                    
+                  
+                </div>
+                
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row gy-1">
+            <div class="portfolio-info">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-top">
+                  
+  
+                  <div class="swiper-slide" data-hash="slide1">
+                    <div class="portfolio-info">              
+                        <h3>Key Observations</h3>
+                        <ul>
+                          <li><strong>Currently, there are seven primary models revolving on the market.</strong> </li>
+                          <li><strong>Out of these 7, the Hatchback, SUV, and Sedan are roughly 9:1 in favour of the rest.</strong> </li>
+                          <li><strong>The SUV is the most popular vehicle, while sports cars are last on list.</strong></li>
+                          <li><strong>On one hand, Hatchback and Sedan are in close competition with each other, whereas MUV and Coupe, while low in demand in general, are in close competition with one another.</strong> </li>
+                        </ul>
+                      </p>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Determining the optimal fuel type for your model as a manufacturer can have a significant impact on the model's success. Diesel, petrol, CNG+Petrol, and hybrid are the main fuel types now available on the market. We've analysed the number of cars produced by various Manufacturers that use various fuel kinds.
+A manufacturer can readily identify the prevailing order of Manufacturers in the market based on the proportion of units manufactured by using the plot. A manufacturer can also forecast the current trend in car fuel type preferences.
+The graph shows that the share of CNG + Petrol and Hybrid variations is still quite low when compared to petrol and diesel variants, indicating that there is room for new launches and success.
+                        <BR>
+                        <h3>Make Vs Fuel Type Pie</h3>
+                        <main>
+                         <div id="chart8"></div>
+                        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                        <script type="text/javascript">
+                         var graph8 = {{graph8JSON | safe}};
+                         Plotly.plot("chart8",graph8,{});
+                         </script>                        
+                         </main>
+                       </p>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide2">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Powerful Vehicles are not fuel efficient</strong></li>
+                        <li><strong>Manufacturers are more focused on Mileage and Price and less on power</strong></li>
+                        <li><strong>There is a lot of scope in the Good Power-Good Mileage Couple</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        A car's mileage and power are two crucial specifications. As a manufacturer, you must determine the best possible mix of power and mileage for the price.
+                        We've examined mileage and power variations for several makes at varying costs.
+                        We notice that most car manufacturers place a premium on price and mileage over power. As a result, we can conclude that automakers prefer automobiles that are more inexpensive and have better fuel efficiency than those that are more powerful.
+                        Following that, we notice that keeping power as our primary parameter price grows with power. We can assert, in instance, that powerful cars are maintained pricey by manufacturers. 
+                        When we look at the relationship between power and mileage attentively, we can see that they are inversely proportional. As a result, we can conclude that powerful automobiles are inefficient in terms of fuel use.
+                        This graphic is useful from the standpoint of a new manufacturer in that it allows him to forecast predicted values for any of the three parameters for given rest values.
+                        We can also see that the Good power-Good mileage Couple has a lot of potential. </p>
+                    </div> 
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide3">
+                    <div class="portfolio-info">
+                      <h3>Key observations</h3>
+                      <ul>
+                        <li><strong>Powerful automobiles are costly.</strong></li>
+                        <li><strong>The recommended power range is 50-250.</strong></li>
+                        <li><strong>The SUV is the most popular body style, while convertibles are the least popular.</strong>: <a href="#"></a></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Your goal as a manufacturer is to provide your consumers with the best feasible power output within specific constraints. The price and body type were used as given criteria, and the data was then categorised according to the power output. According to our data, we used a pricing range of up to 800000 on the Y axis and a power output range of up to 800 on the x axis. We utilised varied colours to symbolise different body types.
+From the manufacturer's perspective, the aforementioned representation has numerous helpful results. When we compare price to power, we can see that powerful cars are generally more expensive. Customers also prefer pricing checks to power checks, and we find a space for new models here. Powerful cars in the SUV sector(most popular) in an affordable range is required. 
+Following that, we may deduce that the most popular car model is the SUV, with one of the reasons for its popularity being its affordability.
+We can deduce from a comparison of body type and power that all demanded body types fall within the power range of 50-250.
+The facts about the preferred pricing range, which is up to 300000, and preferred power range, which is about 50-250, may be found in this graph. SUVs are the most popular body type.
+
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide4">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Currently, there are seven primary models revolving on the market.</strong> </li>
+                        <li><strong>Out of these 7, the Hatchback, SUV, and Sedan are roughly 9:1 in favour of the rest.</strong> </li>
+                        <li><strong>The SUV is the most popular vehicle, while sports cars are last on list.</strong></li>
+                        <li><strong>On one hand, Hatchback and Sedan are in close competition with each other, whereas MUV and Coupe, while low in demand in general, are in close competition with one another.</strong> </li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      Your main priority as a manufacturer is to determine the optimal model for your vehicle. We grouped the available data into homogeneous clusters based on their models, then rendered the data diagrammatically to meet the demands of various models. Here models involved are – Hatchback, Sedan, SUV, MPV, Coupe, Convertible and Sports. Because percentage numbers are involved, adopting a Pie chart for presentation adds an extra benefit of greater visual comparison. Simply by looking at the graph, a manufacturer can learn a lot more about market trends.
+This representation not only provides information about the many models available on the market, but it also illustrates the winning and losing models.
+Manufacturers may now assess market demand, as well as the most popular and least popular models. This is advantageous in that a manufacturer can compare the least and most popular models to generate a list of specs for their vehicle. They can also investigate the reasons for the drop in demand, make the necessary improvements, and provide a new platform for the launch's success.
+This representation not only provides information about the many models available on the market, but it also illustrates the winning and losing models.
+Manufacturers may now assess market demand, as well as the most popular and least popular models. This is advantageous in that a manufacturer can compare the least and most popular models to generate a list of specs for their vehicle. They can also investigate the reasons for the drop in demand, make the necessary improvements, and provide a new platform for the launch's success.
+
+                    </div>
+                      
+                    
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide5">
+                    <div class="portfolio-info">
+                      <h3>Key Observtions</h3>
+                      <ul>
+                        <li><strong>The largest number of cars is found in the 1000-2000cc displacement range, according to the whole dataset count plot.</strong></li>
+                        <li><strong>The vehicle under 19 percent plot shows that cars with displacements between 600 and 1200 cc have a GST rate of 18 percent plus a 1 percent cess.</strong></li>
+                        <li><strong>The vehicle under (21-45) percent plot shows that cars with displacements between 1200 and 1500 cc have a GST rate of 18 percent plus an additional 3% cess if the length is less than 4000mm, and 28 percent plus 17 percent cess if the length is larger than 4000mm.</strong></li>
+                        <li><strong>The vehicle under 48 percent plot shows that cars with displacements more than 1500 cc have a 28 percent GST rate plus an additional 20% cess.</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Taxation in India has key role in defining the affordability of the vehicle to the customer .
+Manufacturers need to pay keen attention of the attributes that define the tax criteria . An intelligently build vehicle can change the shape of the market by acquiring less tax and more features . The graph helps to identify the tax groups and the number of  models of vehicle available under each tax group .
+This is clear from the representation that the value of number of cars is high on the left side of each plot . Hence , it is notable that the current players are trying to fill their vehicles to the brim with the technology that falls under a particular tax segment .
+                        <br><br>
+                        The GST on automobiles is kept inside the 28 percent band, and the Indian government has also announced a list of cess to be paid on various types of automobiles. Cess has been imposed on several types of vehicles, ranging from 1% to 15%.
+We stratified the data count based on the displacement presented in the previous plots, and then replotted three unique graphs based on the GST charge parameters.
+We may deduce from the count plot of the entire dataset that the manufacturers are more interested in counts in the 1000-2000cc range.
+According to government regulations, cars with displacement less than 1200 cc must pay 18 percent GST plus an additional 1% cess, which is reflected in the vehicle under 19 percent plot. We may deduce from the graph that manufacturers make the best use of the criterion by providing the client with the best possible displacement specs at a constant Tax rate.
+Similarly, government regulations mandate that cars with displacements ranging from 1200- 1500 cc be subject to a combined GST and additional cess rate of between 21 and 45 percent. Another factor determining this is the length of the car; cars with a length less than 4000mm have a GST rate of 18% + 3% cess, whereas cars with a length larger than 4000mm have a GST rate of 28 % + 17 % cess. The key to note here is the same as in the previous plot: manufacturers tend to provide the best output in terms of displacement to their customers for particular tax rates.
+The relationship between displacement and power of an automobile is used to analyse the last plot, i.e. vehicles under 48 percent. The higher the displacement, the more powerful the car. However, because very powerful cars are not required in the Indian market, manufacturers prefer to cluster their launches around the lower bound, with a consistent tax rate of 48 percent for cars with a displacement range more than 1500cc.
+
+                      </p>
+                    </div> 
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide6">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Petrol options are available for customers in the POWERFUL segment, Here a diesel option will be an ICEBREAKER</strong></li>
+                        <li><strong>Powerful Hybrid Vehicles market has a handful of options.</strong></li>
+                        <li><strong>CNG segment is lagging behind , might decline over time.</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide7">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>SUV manufacturers seem to be more interested in Diesel variants, whereas Hatchback manufacturers appear to be more interested in Petrol variants. Sedan designers, on the other hand, are equally predisposed to both.</strong></li>
+                        <li><strong>On average, petrol and diesel are equally preferred. Hybrid and CNG + Petrol variants have potential.</strong></li>
+                        <li><strong>The most preferred fuel tank capacity is 30-50 litres.</strong></li>
+                        <li><strong>Diesel variants of vehicles have a larger fuel tank as compared to the petrol variants</strong></li>
+                      </ul>
+                      
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        We've depicted the distribution of fuel types for various body kinds in this graph, as well as the fuel tank capacity options in order of maximum to minimum count for each. Three separate concentric circles are used to illustrate each of these three standards.
+The distribution of body types in the market trend is depicted by the first concentric circle. The most popular body style in this category is the SUV. Next on the list are the Hatchback and Sedan, which are in close competition with each other.
+The distribution of fuel kinds for various body types is represented by the second concentric circle. We can see that SUV makers are more inclined to Diesel vehicles, whereas Hatchback producers are more inclined to Petrol ones. Sedan makers, on the other hand, place equal emphasis on both of these. Another point to note is that the share of hybrid and CNG + Petrol cars is quite small, implying that new car makers have room to grow in this market.
+The fuel tank capacity for each of the unique combinations of numerous fuel kinds and car body types is displayed in the last circle. We may deduce that the optimal range for petrol variants is 30-50 litres, whereas the preferred range for diesel variants is 40-70 litres.
+
+                      </p>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide8">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Torque has an inverse relationship with mileage but mileage dominates over torque as the graph is advancing more towards Y axis.</strong></li>
+                        <li><strong>Hybrid and CNG + Petrol models have a lower proportional output and provide average power and mileage.</strong></li>
+                        <li><strong>Petrol variants are more powerful than diesel models.</strong></li>
+                        <li><strong>Diesel variants are good in mileage as compared to petrol variants.</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        A car's torque is exactly proportionate to its power. The more the torque, the more power the car will produce. In addition, the graph shows that mileage and torque are inversely proportional to one another. As a result, we can deduce that mileage and power are inversely proportional, i.e., the higher the power, the lower the mileage of the car, and vice versa.
+We have developed a relationship between the car's mileage, torque relationship, and fuel type reliance in this plot.
+We may deduce that when we go closer to high torque, we see that just a few data points are available, and that the majority of them are blue, indicating that the majority of automobiles with high torque are petrol variants, or, to put it another way, powerful cars are run on petrol.
+In addition, we can see that in the Indian market, manufacturers are more focused on increasing mileage than increasing power. One reason for this could be India's terrain, which does not necessitate particularly powerful cars, thus lowering the threshold there to boost another attribute could be a strategy.
+We can also see that hybrid and CNG + Petrol models have a relatively low fraction of the market, and that almost all of them give good mileage over power.
+
+                      </p>
+                    </div> 
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide9">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Sedans dominatee in length but are comparable to hatchbacks in all other aspects.</strong></li>
+                        <li><strong>SUV is the highest variable segment but dominates every other segment in terms of Height</strong></li>
+                        <li><strong>Coupe are the vehicles with the smallest height .</strong></li>
+                        <li><strong>4-4.5 meter is the area with all the varieties of vehicle</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                       Cares in India have a vast variety of dimensions . Such variance in the combinations show that the manufacturers are more interested
+                      in delivering what the customer wants rather what the conventional desighn is . The variastion in the highest sold segment - SUV shows that
+                      new SUV's are an upgraded version of small hatchbacks and Large SUV's . The availability of most of the vehicles in the 4-4.5 meter
+                      range deduces that this is the most suitable size of the cars that the market demands.<br>
+                      The scarcity of cars over 5 metre and less than 3.5 metre shows that this area is less competetive and more models can be added to this area.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide10">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Even after the technology boom , manual transmission is used in the majority of cars, followed by automatic transmission.</strong></li>
+                        <li><strong>Transmission types, such as CVT, AMT, and DCT, account for a small percentage of the total and are made by selected manufacturers.</strong></li>
+                        <li><strong>Hyundai and Kia are the most versatile manufacturers in the terms of transmission type.</strong></li>
+                        <li><strong>Maruti Suzuki is the market leader in both manual and automatics transmission variants</strong></li>
+                      </ul>                      
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        In a car, a transmission system, often known as a gearbox, is the mechanical system of gears and gear trains that conveys power generated by the engine to the wheels. A transmission is a device that allows a person to transmit power to a vehicle in a controlled manner; without it, the vehicle would not be able to drive efficiently. Manual transmission, automatic transmission, continuously variable transmission, automatic manual transmission, and dual clutch transmission are all examples of car transmissions.
+                        We've plotted numerous Manufacturers versus various types of car transmissions in this graph.
+                        For the Indian market trend, we may deduce that manufacturers choose to launch more and more manual transmission cars, followed by automatic transmission cars.
+                        It's also worth noting that the proportion of rest transmission is quite small. Maruti Suzuki is the manufacturer's market leader in both the petrol and diesel variants.
+                        
+                      </p>
+                      </div>
+                  </div>
+  
+                  <div class="swiper-slide" data-hash="slide11">
+                    <div class="portfolio-info">
+                      <h3>Tesla Profile and Relation with EV Segment</h3>
+                      <p>Tesla Inc (Tesla) is an automotive and energy company. It designs, develops, manufactures, sells, and leases electric vehicles and energy generation and storage systems. The company produces and sells the Model Y, Model 3, Model X, Model S, Cybertruck, Tesla Semi, and Tesla Roadster vehicles.
+                         Tesla also installs and maintains energy systems and sells solar electricity; and offers end-to-end clean energy products, including generation, storage, and consumption. It markets and sells vehicles to consumers through a network of company owned stores and galleries.
+                          The company has manufacturing facilities in the US, Germany and China and has operations across Asia Pacific and Europe. Tesla is headquartered in Austin, Texas, The US.
+                        
+                      </p>
+                      <p>Tesla has dominated the electric vehicle industry in the United States for several years. Tesla electric vehicles accounted for 79 percent of new electric vehicle registrations in 2020 and 69,95 percent in 2021 
+                        in the United States. Backlogs and the worldwide chip scarcity may explain the decline in market share in 2021, but the company is ramping up sales and has already raised its market share to 75% in the first quarter of the year.</p>
+
+                        <h2>MAKE FOR THE EARLY ADOPTERS</h2>
+                        <p>Early Adopters are the people / customer base who is keenly interested in technology and adopts them as and when its arrives
+                          The EV segment today is majorly tilted towards such type of customers. Experiment Buy and Risk Buy are the terms that prevail
+                          for the current EV market . Coming out with new EV variants will attract such a type of customers.
+                        </p>
+                        
+                      
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Electric Vehicle : The demand of the future customer</h2>
+                      <p>
+                        India has the dubious distinction of having nine of the world's top ten most polluted cities. Greater Noida, Noida, Lucknow, and Delhi are among the nine cities in north India. While numerous things contribute to northern India's filthy air, skies, and human lungs, automobile pollution plays a significant role.
+                        As a result, it's predictable that the Indian government is gradually but steadily supporting the use of electric vehicles. And, in terms of our ability to commute, we may have come full circle. While electric vehicles (EVs) lost out against gasoline-powered vehicles in the 1900s, this may no longer be the case.
+                        An EV is a vehicle that runs on electricity rather than gasoline and has a battery instead of a gas tank.
+                        EVs have reduced operating costs and are also environmentally benign because they have fewer moving parts.
+                        In India, the cost of an electric vehicle's fuel is around 80 paisa per kilometre. Compare this to the cost of petrol in Indian cities, which is now over Rs 100 per litre, or Rs 7-8 per kilometre to operate a petrol-powered vehicle.
+                        The private sector has recognised that the EV's domination is unavoidable.
+                        EVs are being used for deliveries by companies such as Amazon, Swiggy, Zomato, and Ikea.
+                        Automobile manufacturers like as Mahindra are cooperating with consumers such as Ola, while Tata Motors is partnering with Blu Smart Mobility to assure more electric vehicle delivery and ride-hailing services.
+                      </p>
+                    </div> 
+                  </div>
+                        
+                  <div class="swiper-slide" data-hash="slide12">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Economical Sector of cars have good mileage</strong></li>
+                        <li><strong>A vast variety of cars are available under the 10 Lakhs which have mileage between 18-25</strong></li>
+                        <li><strong>Increase in price has NO relation with mileage (Hence external factors are responsible)</strong></li>
+                        <li><strong>A mileage less than 10 is RARE in the Indian Marketplace</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Numerous elements have an impact on every aspect of company. To take those aspects into account and understand their true influence, we must first understand the links between each factor and product sales. This will allow us to identify areas for improvement, allowing us to generate more sales.
+                        Regression analysis is a statistical analysis tool that allows us to forecast a variable based on its connection with another variable, which can help us make smart business decisions. A simple regression equation has two variables: an independent variable whose value we provide as input and a dependent variable whose expected value for the given input we receive as output.
+                        We are projecting the market trend for mileage of the car for the predicted price specified by you in this regression plot. Here, we've used Price as an independent variable as our input, and as an output, we'll give you the mileage based on the current trend. For your comparison, we will also take your estimate on expected mileage.
+                        As a result, you can check on optimal mileage standard for your expected price based on current market trends to make a comparison between an ideal and an expected mileage.
+                      </p>
+                    </div> 
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide13">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Less Power and Less Price is the key Manufacturing sector</strong></li>
+                        <li><strong>Increase is price is greater than the Increase in Power</strong></li>
+                        <li><strong>Very few vehicles in the Indian Marketplace have crossed the 600 mark</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Numerous elements have an impact on every aspect of company. To take those aspects into account and understand their true influence, we must first understand the links between each factor and product sales. This will allow us to identify areas for improvement, allowing us to generate more sales.
+                        Regression analysis is a statistical analysis tool that allows us to forecast a variable based on its connection with another variable, which can help us make smart business decisions. A simple regression equation has two variables: an independent variable whose value we provide as input and a dependent variable whose expected value for the given input we receive as output.
+                        We are projecting the market trend for power of the car for the predicted price specified by you in this regression plot. Here, we've used Price as an independent variable as our input, and as an output, we'll give you the power based on the current trend. For your comparison, we will also take your estimate on expected power.
+                        As a result, you can check on optimal power standard for your expected price based on current market trends to make a comparison between an ideal and an expected power.
+                      </p>
+                    </div> 
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide14">
+                    <div class="portfolio-info">
+                      <h3>Shared Mobility : The Expanding Opportunity</h3>
+                      <p>Shared mobility is disrupting the Commercial marketplace for manufacturers (As viewed by the majority).
+                        Whereas an in-depthpicture shows something different . The industry of shared mobility is dependent on mobility
+                        that is "Cars" and hence the automobile manufacturer has a clear chance of getting a good marketplace over here .
+                        The manufacturer must start observing the trends on how the market Cap. of UBER, OLA is increasing which is directly
+                        related to the increase in the number of vehicle in the segment and hence increase in demand . 
+                      </p>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Key Inferences</h2><p>
+                        Make vehicles best in mileage. Make them Cheap . Make them affordable. Make them easily availabe to the customer.
+                        Improve finance availability. Observe the below graph of vehicle purchase type and number of dependents to deduce
+                        the type of vehicle a manufacturer should start working on.
+                      <main>
+                        <div id="chart89"></div>
+                        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                        <script type="text/javascript">
+                        var graph89 = {{graph89JSON | safe}};
+                        Plotly.plot("chart89",graph89,{});
+                        </script>
+                        
+                        </main>
+                        </p>
+                    </div> 
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide15">
+                    <div class="portfolio-info">
+                      <h3>Key Observations - </h3>
+                      <ul>
+                        <li><strong>Maharashtra , Gujarat and Uttar Pradesh turned out to be the major marketplace.</strong></li>
+                        <li><strong>Automobile sales declined every quarter during the period.</strong></li>
+                        <li><strong>Delhi and NCT has a great potential of sales even after land small area .</strong></li>
+                        <li><strong>Assam is the main potential market of the Eastern - Indian Region</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis-</h2>
+                      <main>
+                        <p>
+                        <div id="chart69"></div>
+                        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                        <script type="text/javascript">
+                        var graph69 = {{graph69JSON | safe}};
+                        Plotly.plot("chart69",graph69,{});
+                        </script>
+                        This yearly sales report covers the financial year 2019 and shows that about a third of the country's passenger car market is projected to be disrupted. Lockdown rules varied by state, having varying degrees of influence on distribution, retail, and after-sales operations, resulting in lower car and component manufacturing. Due to the stringent restrictions imposed by the state government, showroom closures resulted in not only no sales but also a rise in fixed expenditures over time.
+
+                        The annual car sales report for each state is shown above. We can see that roughly 1.74 million cars were sold in the first half of the financial year 2019, while 1.63 million were sold in the second half. With approximately 1 million sales, the West zone, which includes the states of Maharashtra, Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, and Goa, is the leading zone. Maharashtra is in charge of the zone.
+                        The North Zone, which includes Uttar Pradesh, Delhi, Haryana, Punjab, Jammu and Kashmir, Uttaranchal, Himachal Pradesh, and Chandigarh, is next on the list, with 980k units sold. The state of Uttar Pradesh is the zone's leader.
+                        The South Zone, which includes Kerala, Karnataka, Tamil Nadu, Telangana, Andhra Pradesh, and Pondicherry, comes in second with sales of around 940 thousand units. Kerela leading the zone.
+                        The East zone, which comprises West Bengal, Assam, Bihar, Jharkhand, Orissa, Meghalaya, Nagaland, Tripura, Manipur, Arunachal Pradesh, Sikkim, Mizoram, and the Andaman and Nicobar Islands, has the least amount of sales. West Bengal led the zone with a zonal sale of around 420k.
+                        </p>
+                        </main>
+                    </div> 
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide16">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Cars costing up to 1.1 million rupees (11 lakhs) are frequently purchased on credit.</strong></li>
+                        <li><strong>Cars priced between 1.2 and 1.7 million rupees (12 - 17 lakhs) are purchased on a no credit basis more frequently.</strong></li>
+                        <li><strong>The First-customer requires credit for an economical car purchase</strong></li>
+                        <li><strong>Expensive cars have less/no effect of credit availability.</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        Credit Availability provides power to purchase . This line seems to be true for the First Customer and customers coming from 
+                        middle and lower income class (as can be inferred by the type of car purchased).The customers with low-income tend to be a car owner 
+                        with credits . Customers tend to buy a mid range car from their own money and hence results are tilting towards no-credit buy in the 
+                        13-20 lakhs range. But , this fact must not be neglected that the availability of credit may not surpass self buy, it still doubles the 
+                        sale of vehicle . As customers dependent on credit wont come in the class of potential buyers if credits are over .
+                        <br>
+                        Manufactures must strenthen their Business with banks to maintain this customer base and try to increase the same.
+                      </p>
+                    </div> 
+                  </div>
+
+                  <div class="swiper-slide" data-hash="slide17">
+                    <div class="portfolio-info">
+                      <h3>Key Observations</h3>
+                      <ul>
+                        <li><strong>Maruti Suzuki is the market leader in both petrol and diesel variants.</strong></li>
+                        <li><strong>Petrol variant is the major selling part of Tata , diesel is not prefferd by customers in this brand.</strong></li>
+                        <li><strong>Overall petrol variants dominate the market in terms of sales</strong></li>
+                        <li><strong>On a whole Petrol and Diesel variants contribute 60-40 to a brand.</strong></li>
+                      </ul>
+                    </div>
+                    <div class="portfolio-description">
+                      <h2>Detailed Analysis</h2>
+                      <p>
+                        As a manufacturer, one of the most difficult decisions you'll have to make is whether to use petrol or diesel in your vehicle. Diesel automobiles, on the one hand, have a low fuel cost and great fuel economy, yet petrol cars have a higher RPM and beginning acceleration, making them more powerful.
+                        For a handful of the major brands, we've shown a comparison of the number of sold quantities of petrol and diesel variants.
+                        Maruti Suzuki is the market leader in both types, with approximately 126 thousand petrol variants and 137 thousand diesel variants sold.
+                        Also, we can see that, with a 6:4 ratio, petrol variants continue to outnumber diesel variants in total.<br>
+                       
+                      </p>
+                    </div> 
+                  </div>
+              </div>
+                
+                
+              </div>
+              </div>
+          
+          </div>
+          </div>
+
+        
+    </section><!-- End Portfolio Details Section -->
+ 
+ </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>AIA<span>.</span></h3>
+              <p>
+                Analysis in Action <br>
+                Siddharth Vihar , Ghaziabad<br><br>
+                <strong>Phone:</strong> 9319310119<br>
+                <strong>Email:</strong> aakashagrawal2710@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Get the latest update on Automobile Industry and Quarterly Analysis report by applying here.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AIA</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+          Designed by <a href="mailto:aakashagrawal2710@gmail.com">Aakash Agrawal</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='purecounter.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='swiper-bundle.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
