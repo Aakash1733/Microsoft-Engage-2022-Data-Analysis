@@ -1,0 +1,8 @@
+numpy
+pandas
+plotly
+plotly-express
+plotly-calplot
+flask
+scikit-learn
+yfinance
